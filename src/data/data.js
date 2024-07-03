@@ -6,55 +6,41 @@ export const navbar = [
   },
   {
     id: 2,
-    path: "/brands",
-    nav: "Brands",
+    path: "/shop",
+    nav: "Shop",
   },
   {
     id: 3,
-    path: "/shop",
-    nav: "Our Shop",
+    path: "/blog",
+    nav: "Blog",
   },
   {
     id: 4,
-    path: "/onsale",
-    nav: "On Sale",
+    path: "/about",
+    nav: "About Us",
   },
   {
     id: 5,
-    path: "/shop",
-    nav: "Headphones",
-  },
-  {
-    id: 6,
-    path: "/shop",
-    nav: "Earpods",
-  },
-  {
-    id: 7,
-    path: "/shop",
-    nav: "Speakers",
-  },
-  {
-    id: 8,
-    path: "/shop",
-    nav: "Watches",
-  },
-  {
-    id: 9,
-    path: "/shop",
-    nav: "Accessories",
+    path: "/contact",
+    nav: "Contact Us",
   },
 ];
 
 export const banners = [
   {
-    banner: "../assets/banner1.jpg",
+    banner: "../src/assets/banner/banner1.jpg",
   },
   {
-    banner: "../assets/banner2.jpg",
+    banner: "../src/assets/banner/banner2.jpg",
   },
   {
-    banner: "../assets/banner3.jpg",
+    banner: "../src/assets/banner/banner3.jpg",
+  },
+  {
+    banner: "../src/assets/banner/banner4.jpg",
+  },
+  {
+    banner: "../src/assets/banner/banner5.jpg",
   },
 ];
 

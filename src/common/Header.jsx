@@ -33,7 +33,7 @@ export default function Header() {
   };
 
   return (
-    <div>
+    <>
       <div
         className={`sticky header py-4 top-0 z-50 shadow-xl ${
           sticky ? "bg-white" : ""
@@ -79,6 +79,6 @@ export default function Header() {
       </div>
 
       <Sidebar isSidebarOpen={isSidebarOpen} closeSidebar={closeSidebar} />
-    </div>
+    </>
   );
 }
