@@ -1,12 +1,36 @@
+import { useEffect, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { PiMinus, PiPlus } from "react-icons/pi";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addToCart } from "../redux/cartSlice";
 
 /* eslint-disable react/prop-types */
 export default function Modal({ isModalOpen, handleClose, data }) {
+  const [qty, setQty] = useState(1);
+
+  const dispatch = useDispatch();
+
   function onAddItemToCart(product) {
-    alert(product);
+    let totalPrice = qty * product.price;
+    const tempProduct = {
+      ...product,
+      quantity: qty,
+      totalPrice,
+    };
+
+    dispatch(addToCart(tempProduct));
   }
+
+  useEffect(() => {
+    if (isModalOpen) {
+      //
+    } else {
+      setQty(1);
+    }
+
+    return () => {};
+  }, [isModalOpen]);
 
   return (
     <div>
