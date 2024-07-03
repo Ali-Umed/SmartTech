@@ -3,7 +3,7 @@ import { FaTimes } from "react-icons/fa";
 import { PiMinus, PiPlus } from "react-icons/pi";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart, updateQuantity } from "../redux/cartSlice";
+import { addToCart, getCartTotal, updateQuantity } from "../redux/cartSlice";
 
 /* eslint-disable react/prop-types */
 export default function Modal({ isModalOpen, handleClose, data }) {
@@ -21,8 +21,9 @@ export default function Modal({ isModalOpen, handleClose, data }) {
       totalPrice,
     };
 
-    setAddedItemToCart(true);
     dispatch(addToCart(tempProduct));
+    dispatch(getCartTotal());
+    setAddedItemToCart(true);
   }
 
   useEffect(() => {

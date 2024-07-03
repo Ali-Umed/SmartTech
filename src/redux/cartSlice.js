@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { products } from "../data/data";
 
 function storeInLocalStorage(data) {
   localStorage.setItem("cart", JSON.stringify(data));
@@ -39,7 +40,22 @@ const cartSlice = createSlice({
         storeInLocalStorage(state.data);
       }
     },
-    updateQuantity: () => {},
+    updateQuantity: (state, action) => {
+      const { id, quantity } = action.payload;
+      const productIndex = state.data.findIndex((product) => product.id === id);
+
+      if (productIndex !== -1) {
+        const updateProduct = {
+          ...state.data[productIndex],
+          quantity: Math.max(quantity || 1, 1),
+        };
+        updateProduct.totalPrice =
+          updateProduct.totalPrice * updateProduct.totalPrice;
+
+        state.data[productIndex] = updateProduct;
+        storeInLocalStorage(state.data);
+      }
+    },
     removeItem: () => {},
     getCartTotal: () => {},
   },
