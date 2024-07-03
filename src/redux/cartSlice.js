@@ -56,8 +56,20 @@ const cartSlice = createSlice({
         storeInLocalStorage(state.data);
       }
     },
-    removeItem: () => {},
-    getCartTotal: () => {},
+    removeItem: (state, action) => {
+      const tempCart = state.data.filter(
+        (product) => product.id === action.payload.id
+      );
+      state.data = tempCart;
+      storeInLocalStorage(state.data);
+    },
+    getCartTotal(state) {
+      state.totalAmount = state.data.reduce((cartTotal, cartItem) => {
+        return (cartTotal += cartItem.totalPrice);
+      }, 0);
+
+      state.totalItems = state.data.length;
+    },
   },
 });
 
