@@ -3,22 +3,25 @@ import { FaTimes } from "react-icons/fa";
 import { PiMinus, PiPlus } from "react-icons/pi";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart } from "../redux/cartSlice";
+import { addToCart, updateQuantity } from "../redux/cartSlice";
 
 /* eslint-disable react/prop-types */
 export default function Modal({ isModalOpen, handleClose, data }) {
   const [qty, setQty] = useState(1);
+  const [addedItemToCart, setAddedItemToCart] = useState(false);
 
   const dispatch = useDispatch();
 
   function onAddItemToCart(product) {
     let totalPrice = qty * product.price;
+
     const tempProduct = {
       ...product,
       quantity: qty,
       totalPrice,
     };
 
+    setAddedItemToCart(true);
     dispatch(addToCart(tempProduct));
   }
 
@@ -27,10 +30,22 @@ export default function Modal({ isModalOpen, handleClose, data }) {
       //
     } else {
       setQty(1);
+      setAddedItemToCart(false);
     }
 
     return () => {};
   }, [isModalOpen]);
+
+  function increaseQuantity(itemId, currentQuantity) {
+    const newQuantity = currentQuantity + 1;
+    setQty(newQuantity);
+    dispatch(updateQuantity({ id: itemId, quantity: newQuantity }));
+  }
+  function decreaseQuantity(itemId, currentQuantity) {
+    const newQuantity = Math.max(currentQuantity - 1, 1);
+    setQty(newQuantity);
+    dispatch(updateQuantity({ id: itemId, quantity: newQuantity }));
+  }
 
   return (
     <div>
@@ -82,27 +97,38 @@ export default function Modal({ isModalOpen, handleClose, data }) {
 
                 <div className="flex items-center">
                   <div className="flex items-center mr-4">
-                    <button className="border border-gray-300 p-2 sm:p-3 hover:bg-gray-100 transition">
+                    <button
+                      className="border border-gray-300 p-2 sm:p-3 hover:bg-gray-100 transition"
+                      onClick={() => decreaseQuantity(data.id, qty)}
+                    >
                       <PiMinus />
                     </button>
-                    <span className="border border-gray-300 p-2 sm:p-3">1</span>
-                    <button className="border border-gray-300 p-2 sm:p-3 hover:bg-gray-100 transition">
+                    <span className="border border-gray-300 p-2 sm:p-3">
+                      {qty}
+                    </span>
+                    <button
+                      className="border border-gray-300 p-2 sm:p-3 hover:bg-gray-100 transition"
+                      onClick={() => increaseQuantity(data.id, qty)}
+                    >
                       <PiPlus />
                     </button>
                   </div>
 
                   <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
-                    <Link to="/cart">
-                      <button className="bg-blue-500 text-white p-2 sm:p-3 rounded-md hover:bg-blue-600 transition">
-                        View Cart
+                    {addedItemToCart ? (
+                      <Link to="/cart">
+                        <button className="bg-blue-500 text-white p-2 sm:p-3 rounded-md hover:bg-blue-600 transition">
+                          View Cart
+                        </button>
+                      </Link>
+                    ) : (
+                      <button
+                        className="bg-green-500 text-white p-2 sm:p-3 rounded-md hover:bg-green-600 transition"
+                        onClick={() => onAddItemToCart(data)}
+                      >
+                        Add To Cart
                       </button>
-                    </Link>
-                    <button
-                      className="bg-green-500 text-white p-2 sm:p-3 rounded-md hover:bg-green-600 transition"
-                      onClick={() => onAddItemToCart(data)}
-                    >
-                      Add To Cart
-                    </button>
+                    )}
                   </div>
                 </div>
               </div>
