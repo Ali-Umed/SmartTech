@@ -73,7 +73,7 @@ export const category = [
 export const products = [
   {
     id: 1,
-    img: "../assets/product1.jpg",
+    img: "../src/assets/category/category2.jpg",
     tag: "20% Off",
     btn: "Select Options",
     category: "Headphones",
@@ -87,7 +87,7 @@ export const products = [
   },
   {
     id: 2,
-    img: "../assets/product2.jpg",
+    img: "../src/assets/category/category1.jpg",
     tag: "15% Off",
     btn: "Select Options",
     category: "Earpods",
@@ -101,7 +101,7 @@ export const products = [
   },
   {
     id: 3,
-    img: "../assets/product3.jpg",
+    img: "../src/assets/category/category1.jpg",
     tag: "10% Off",
     btn: "Select Options",
     category: "Speakers",
@@ -114,7 +114,7 @@ export const products = [
   },
   {
     id: 4,
-    img: "../assets/product4.jpg",
+    img: "../src/assets/category/category3.jpg",
     tag: "25% Off",
     btn: "Select Options",
     category: "Watches",
@@ -128,7 +128,59 @@ export const products = [
   },
   {
     id: 5,
-    img: "../assets/product5.jpg",
+    img: "../src/assets/category/category1.jpg",
+    tag: "30% Off",
+    btn: "Select Options",
+    category: "Accessories",
+    brand: "Brand E",
+    title: "Charging Cable",
+    short_description: "Durable and fast-charging USB cable.",
+    price: "15.00",
+    description:
+      "Our durable USB charging cable ensures fast charging and long-lasting use, perfect for all your devices.",
+  },
+  {
+    id: 5,
+    img: "../src/assets/category/category2.jpg",
+    tag: "30% Off",
+    btn: "Select Options",
+    category: "Accessories",
+    brand: "Brand E",
+    title: "Charging Cable",
+    short_description: "Durable and fast-charging USB cable.",
+    price: "15.00",
+    description:
+      "Our durable USB charging cable ensures fast charging and long-lasting use, perfect for all your devices.",
+  },
+  {
+    id: 5,
+    img: "../src/assets/category/category3.jpg",
+    tag: "30% Off",
+    btn: "Select Options",
+    category: "Accessories",
+    brand: "Brand E",
+    title: "Charging Cable",
+    short_description: "Durable and fast-charging USB cable.",
+    price: "15.00",
+    description:
+      "Our durable USB charging cable ensures fast charging and long-lasting use, perfect for all your devices.",
+  },
+  {
+    id: 5,
+    img: "../src/assets/category/category1.jpg",
+    tag: "30% Off",
+    btn: "Select Options",
+    category: "Accessories",
+    brand: "Brand E",
+    title: "Charging Cable",
+    short_description: "Durable and fast-charging USB cable.",
+    price: "15.00",
+    description:
+      "Our durable USB charging cable ensures fast charging and long-lasting use, perfect for all your devices.",
+  },
+  {
+    id: 5,
+    img: "../src/assets/category/category2.jpg",
     tag: "30% Off",
     btn: "Select Options",
     category: "Accessories",

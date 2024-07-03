@@ -14,7 +14,7 @@ export default function Catagory() {
                   }  overflow-hidden mb-4`}
                 >
                   <img
-                    className="w-full h-full object-cover rounded-3xl hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-center rounded-3xl hover:scale-110 transition-transform duration-500"
                     src={cat.img}
                     alt={cat.name}
                   />
@@ -31,7 +31,7 @@ export default function Catagory() {
                       className="relative  h-full overflow-hidden mb-4"
                     >
                       <img
-                        className="w-full h-full object-cover rounded-3xl hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-center rounded-3xl hover:scale-110 transition-transform duration-500"
                         src={image.img}
                         alt={image.name}
                       />

@@ -18,11 +18,11 @@ export default function Banner() {
   };
 
   return (
-    <div className="banner">
+    <div className="banner mt-3">
       <div className="w-10/12 m-auto">
-        <div className="mb-10 text-center">
+        <div className="mb-3 text-center">
           <div className="header-text">
-            <Link className="flex items-center justify-center mb-4 text-gray-700 hover:text-gray-900 transition-all duration-200">
+            <Link className="flex items-center justify-center mb-0 text-gray-700 hover:text-gray-900 transition-all duration-200">
               <div className="mr-4 text-4xl rounded-full h-12 w-12 grid place-items-center bg-gray-200 hover:bg-gray-300 transition-colors duration-200">
                 <MdOutlineWatch />
               </div>
@@ -41,7 +41,7 @@ export default function Banner() {
             {banners.map((val, i) => (
               <div key={i}>
                 <img
-                  className="w-full h-[750px] object-cover rounded-lg shadow-lg"
+                  className="w-full h-[650px] object-center rounded-lg shadow-lg"
                   src={val.banner}
                   alt=""
                 />
