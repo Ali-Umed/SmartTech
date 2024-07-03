@@ -4,6 +4,7 @@ import { products } from "../data/data";
 import { BiCart } from "react-icons/bi";
 import { useState } from "react";
 import Modal from "../common/Modal";
+import "../index.css";
 
 export default function FlashSale() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,11 +50,20 @@ export default function FlashSale() {
                   </div>
                 </div>
               </div>
+
+              <div className="product-details mt-2">
+                <p className="mb-2">{item.title}</p>
+                <p>${item.price}</p>
+              </div>
             </div>
           ))}
         </div>
       </div>
-      <Modal />
+      <Modal
+        isModalOpen={isModalOpen}
+        handleClose={handleClose}
+        data={products.find((item) => item.id)}
+      />
     </div>
   );
 }
