@@ -5,10 +5,14 @@ export default function Catagory() {
     <div className="w-10/12 mx-auto py-8">
       <div className="flex flex-wrap -mx-2">
         {category.map((cat, index) => (
-          <div key={index} className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-2">
-            <div className=" rounded-3xl overflow-hidden  transition-shadow duration-300 mb-4">
+          <div key={index} className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-2 ">
+            <div className=" rounded-3xl  h-[500px]    duration-300 mb-4">
               {cat.img && (
-                <div className="relative h-48 md:h-64 lg:h-72 overflow-hidden mb-4">
+                <div
+                  className={` relative  ${
+                    cat.imgs && cat.imgs.length > 0 ? "h-1/2" : "h-full"
+                  }  overflow-hidden mb-4`}
+                >
                   <img
                     className="w-full h-full object-cover rounded-3xl hover:scale-110 transition-transform duration-500"
                     src={cat.img}
@@ -24,7 +28,7 @@ export default function Catagory() {
                   {cat.imgs.map((image, key) => (
                     <div
                       key={key}
-                      className="relative h-48 md:h-64 lg:h-72 overflow-hidden mb-4"
+                      className="relative  h-full overflow-hidden mb-4"
                     >
                       <img
                         className="w-full h-full object-cover rounded-3xl hover:scale-110 transition-transform duration-500"

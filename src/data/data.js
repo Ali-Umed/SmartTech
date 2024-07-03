@@ -47,25 +47,25 @@ export const banners = [
 export const category = [
   {
     id: 1,
-    img: "../src/assets/earphone/earphones_b_1.webp",
-    name: "earphone",
+    img: "../src/assets/category/earpod.jpg",
+    name: "microohone",
   },
   {
     id: 2,
-    img: "../src/assets/headphone/headphones_b_3.webp",
-    name: "headphone",
+    img: "../src/assets/category/category2.jpg",
+    name: "microohone",
   },
   {
     id: 4,
-    img: "../src/assets/watch/watch_blue.webp",
-    name: "watch",
+    img: "../src/assets/category/keyboad.jpg",
+    name: "compoter",
   },
   {
     id: 3,
-    img: "../src/assets/watch/watch_black_2.webp",
-    name: "watch",
+    img: "../src/assets/category/category1.jpg",
+    name: "classic Watch",
     imgs: [
-      { img: "../src/assets/watch/watch_black.webp", name: "watch_black" },
+      { img: "../src/assets/category/category3.jpg", name: "modern watch" },
     ],
   },
 ];
