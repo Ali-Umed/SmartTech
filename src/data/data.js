@@ -19,11 +19,6 @@ export const navbar = [
     path: "/about",
     nav: "About Us",
   },
-  {
-    id: 5,
-    path: "/contact",
-    nav: "Contact Us",
-  },
 ];
 
 export const banners = [
