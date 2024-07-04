@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import "../../src/index.css";
-import { navbar } from "../data/data";
 import { useEffect, useState } from "react";
 import {
   HiOutlineHeart,
@@ -8,10 +6,13 @@ import {
   HiOutlineUser,
 } from "react-icons/hi";
 import Sidebar from "./Sidebar";
+import { useSelector } from "react-redux";
+import { navbar } from "../data/data";
 
 export default function Header() {
   const [sticky, setSticky] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { totalItems } = useSelector((state) => state.cart);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,46 +36,48 @@ export default function Header() {
   return (
     <>
       <div
-        className={`sticky header py-4 top-0 z-50 shadow-xl ${
-          sticky ? "bg-white" : ""
-        }`}
+        className={`sticky top-0 z-50 shadow-xl ${sticky ? "bg-white" : ""}`}
       >
-        <div className="w-10/12 m-auto flex flex-wrap justify-between items-center">
-          <div>
-            <div className="logo font-bold text-2xl">Logo</div>
-          </div>
-          <div className="md:flex flex-wrap text-base py-3">
+        <div className="w-10/12 m-auto py-4 flex justify-between items-center">
+          <div className="font-bold text-2xl">Logo</div>
+
+          <nav className="flex items-center space-x-5">
             {navbar.map((val, key) => (
-              <div key={key} className="mr-5">
-                <Link
-                  className="active link-hover transition-all text-gray-700 hover:text-gray-900"
-                  to={val.path}
-                >
-                  {val.nav}
-                </Link>
-              </div>
+              <Link
+                key={key}
+                to={val.path}
+                className="text-gray-700 hover:text-gray-900 transition-colors"
+              >
+                {val.nav}
+              </Link>
             ))}
-          </div>
-          <ul className="flex items-center space-x-5">
-            <li>
-              <Link className="text-2xl text-gray-700 hover:text-gray-900">
-                <HiOutlineHeart />
-              </Link>
-            </li>
-            <li>
-              <Link className="text-2xl text-gray-700 hover:text-gray-900">
-                <HiOutlineUser />
-              </Link>
-            </li>
-            <li onClick={toggleSidebar} className="relative cursor-pointer">
-              <Link className="text-2xl text-gray-700 hover:text-gray-900">
-                <HiOutlineShoppingBag />
-              </Link>
-              <div className="items_count bg-red-500 rounded-full w-4 h-4 flex items-center justify-center text-white text-xs absolute top-0 right-0">
-                2
-              </div>
-            </li>
-          </ul>
+
+            <Link
+              to="/wishlist"
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              <HiOutlineHeart className="text-2xl" />
+            </Link>
+
+            <Link
+              to="/profile"
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              <HiOutlineUser className="text-2xl" />
+            </Link>
+
+            <div
+              onClick={toggleSidebar}
+              className="relative cursor-pointer text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              <HiOutlineShoppingBag className="text-2xl" />
+              {totalItems > 0 && (
+                <div className="absolute top-0 right-0 -mt-1 -mr-1 bg-red-500 rounded-full w-4 h-4 flex items-center justify-center text-white text-xs">
+                  {totalItems}
+                </div>
+              )}
+            </div>
+          </nav>
         </div>
       </div>
 

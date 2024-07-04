@@ -3,6 +3,7 @@ import { FaTimes } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartTotal, removeItem } from "../redux/cartSlice";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Sidebar({ isSidebarOpen, closeSidebar }) {
   const dispatch = useDispatch();
@@ -10,6 +11,11 @@ export default function Sidebar({ isSidebarOpen, closeSidebar }) {
   const { data: cartProducts, totalAmount } = useSelector(
     (state) => state.cart
   );
+
+  const cartSelector = useSelector((state) => state.cart);
+  useEffect(() => {
+    dispatch(getCartTotal());
+  }, [cartSelector, dispatch]);
 
   function removeFromCart(itemId) {
     dispatch(removeItem({ id: itemId }));
