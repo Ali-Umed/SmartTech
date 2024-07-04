@@ -57,7 +57,7 @@ const cartSlice = createSlice({
     },
     removeItem: (state, action) => {
       const tempCart = state.data.filter(
-        (product) => product.id === action.payload.id
+        (product) => product.id !== action.payload.id
       );
       state.data = tempCart;
       storeInLocalStorage(state.data);
