@@ -71,7 +71,7 @@ export default function Header() {
                 <HiOutlineShoppingBag />
               </Link>
               <div className="items_count bg-red-500 rounded-full w-4 h-4 flex items-center justify-center text-white text-xs absolute top-0 right-0">
-                0
+                2
               </div>
             </li>
           </ul>
