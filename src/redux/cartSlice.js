@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { products } from "../data/data";
 
 function storeInLocalStorage(data) {
   localStorage.setItem("cart", JSON.stringify(data));
