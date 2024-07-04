@@ -62,7 +62,7 @@ export default function FlashSale() {
       <Modal
         isModalOpen={isModalOpen}
         handleClose={handleClose}
-        data={products.find((item) => item.id)}
+        data={products.find((item) => item.id === isModalOpen)}
       />
     </div>
   );
