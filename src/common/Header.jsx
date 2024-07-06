@@ -43,12 +43,12 @@ export default function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 shadow-xl transition-colors duration-300 ${
+        className={`  sticky top-0 z-50 shadow-lg transition-colors duration-300 ${
           sticky ? "bg-white" : ""
         }`}
       >
         <div className="container mx-auto py-4 flex justify-between items-center px-4 sm:px-0">
-          <div className="font-bold text-2xl">Logo</div>
+          <div className="font-bold text-2xl">SmartTech</div>
 
           <div className="block sm:hidden">
             <button
@@ -66,13 +66,14 @@ export default function Header() {
           <nav
             className={`${
               isMenuOpen ? "block" : "hidden"
-            } absolute top-16  right-0 w-1/4 bg-white shadow-md sm:flex sm:items-center sm:space-x-5 sm:relative sm:top-0 sm:bg-transparent sm:shadow-none`}
+            } absolute top-16  right-0  bg-white shadow-md sm:flex sm:items-center sm:space-x-5 sm:relative sm:top-0 sm:bg-transparent sm:shadow-none`}
           >
             {navbar.map((val, key) => (
               <Link
+                onClick={toggleMenu}
                 key={key}
                 to={val.path}
-                className="block text-gray-700 hover:text-blue-700 hover:font-semibold transition-colors p-4 sm:p-0"
+                className="block text-gray-700 hover:text-blue-700  transition-colors p-4 sm:p-0"
               >
                 {val.nav}
               </Link>
