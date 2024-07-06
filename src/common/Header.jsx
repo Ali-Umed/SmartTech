@@ -43,17 +43,17 @@ export default function Header() {
   return (
     <>
       <header
-        className={`  sticky top-0 z-50 shadow-lg transition-colors duration-300 ${
+        className={` sticky top-0 z-50 shadow-lg transition-colors duration-300 ${
           sticky ? "bg-white" : ""
         }`}
       >
-        <div className="container mx-auto py-4 flex justify-between items-center px-4 sm:px-0">
+        <div className="container mx-auto py-4 flex justify-between items-center px-4 sm:px-4">
           <div className="font-bold text-2xl">SmartTech</div>
 
           <div className="block sm:hidden">
             <button
               onClick={toggleMenu}
-              className="text-gray-700 hover:text-gray-900 transition-colors"
+              className="text-gray-700 hover:text-teal-400 transition-colors"
             >
               {isMenuOpen ? (
                 <HiOutlineX className="text-2xl" />
@@ -73,7 +73,7 @@ export default function Header() {
                 onClick={toggleMenu}
                 key={key}
                 to={val.path}
-                className="block text-gray-700 hover:text-blue-700  transition-colors p-4 sm:p-0"
+                className="block text-gray-700 hover:text-teal-400  transition-colors p-4 sm:p-0"
               >
                 {val.nav}
               </Link>
