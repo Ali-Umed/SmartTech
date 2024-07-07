@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {
@@ -11,7 +12,7 @@ import Sidebar from "./Sidebar";
 import { useSelector } from "react-redux";
 import { navbar } from "../data/data";
 
-export default function Header() {
+export default function Header({ scrollToFooter }) {
   const [sticky, setSticky] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,9 +71,14 @@ export default function Header() {
           >
             {navbar.map((val, key) => (
               <Link
-                onClick={toggleMenu}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  if (val.nav == "About Us") {
+                    scrollToFooter();
+                  }
+                }}
                 key={key}
-                to={val.path}
+                to={val.path ? val.path : ""}
                 className="block text-gray-700 hover:text-teal-400  transition-colors p-4 sm:p-0"
               >
                 {val.nav}

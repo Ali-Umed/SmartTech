@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import { footer } from "../data/data";
 import {
   FaFacebook,
@@ -7,6 +8,7 @@ import {
   FaMoneyCheckAlt,
   FaTruck,
 } from "react-icons/fa";
+import { forwardRef } from "react";
 
 const icons = {
   FaFacebook: <FaFacebook />,
@@ -17,9 +19,9 @@ const icons = {
   FaTruck: <FaTruck />,
 };
 
-export default function Footer() {
+const Footer = forwardRef((props, ref) => {
   return (
-    <div className="bg-gray-900 ">
+    <div ref={ref} className="bg-gray-900 ">
       <div className=" px-4 md:px-12 mx-auto">
         <div className="flex flex-row  justify-center items-start  flex-wrap py-4 gap-2 ">
           {footer.map((val, index) => (
@@ -54,4 +56,6 @@ export default function Footer() {
       </div>
     </div>
   );
-}
+});
+
+export default Footer;

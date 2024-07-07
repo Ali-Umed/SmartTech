@@ -16,7 +16,6 @@ export const navbar = [
   },
   {
     id: 4,
-    path: "/about",
     nav: "About Us",
   },
 ];
