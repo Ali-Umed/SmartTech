@@ -8,9 +8,10 @@ import {
   HiOutlineMenu,
   HiOutlineX,
 } from "react-icons/hi";
-import Sidebar from "./Sidebar";
 import { useSelector } from "react-redux";
+import Sidebar from "./Sidebar";
 import { navbar } from "../data/data";
+import { GrTechnology } from "react-icons/gr";
 
 export default function Header({ scrollToFooter }) {
   const [sticky, setSticky] = useState(false);
@@ -44,14 +45,19 @@ export default function Header({ scrollToFooter }) {
   return (
     <>
       <header
-        className={` sticky top-0 z-50 shadow-lg transition-colors duration-300 ${
+        className={`sticky top-0 z-50 w-full shadow-lg ${
           sticky ? "bg-white" : ""
         }`}
       >
-        <div className="container mx-auto py-4 flex justify-between items-center px-4 sm:px-4">
-          <div className="font-bold text-2xl">SmartTech</div>
+        <div className="mx-auto py-4 flex w-full justify-between items-center px-4 sm:px-4">
+          <div className="ml-4 flex items-center">
+            <GrTechnology className="text-4xl text-gray-700 hover:text-teal-600 transition-colors duration-200" />
+            <span className="ml-2 text-2xl font-bold text-gray-700 hover:text-teal-600  transition-colors duration-200">
+              kurdTech
+            </span>
+          </div>
 
-          <div className="block sm:hidden">
+          <div className="block md:hidden">
             <button
               onClick={toggleMenu}
               className="text-gray-700 hover:text-teal-400 transition-colors"
@@ -67,19 +73,19 @@ export default function Header({ scrollToFooter }) {
           <nav
             className={`${
               isMenuOpen ? "block" : "hidden"
-            } absolute top-16  right-0  bg-white shadow-md sm:flex sm:items-center sm:space-x-5 sm:relative sm:top-0 sm:bg-transparent sm:shadow-none`}
+            } absolute top-16 right-0 bg-white shadow-md  p-6 md:p-0    md:flex md:items-center md:space-x-5   md:relative md:top-0 flex flex-col  text-center md:flex-row md:bg-transparent md:shadow-none`}
           >
             {navbar.map((val, key) => (
               <Link
                 onClick={() => {
                   setIsMenuOpen(false);
-                  if (val.nav == "About Us") {
+                  if (val.nav === "About Us") {
                     scrollToFooter();
                   }
                 }}
                 key={key}
                 to={val.path ? val.path : ""}
-                className="block text-gray-700 hover:text-teal-400  transition-colors p-4 sm:p-0"
+                className="block text-gray-700 hover:text-teal-600 text-lg transition-colors  p-4 md:p-0"
               >
                 {val.nav}
               </Link>
@@ -87,21 +93,21 @@ export default function Header({ scrollToFooter }) {
 
             <Link
               to="/wishlist"
-              className="block text-gray-700 hover:text-gray-900 transition-colors p-4 sm:p-0"
+              className="block text-gray-700  self-center  hover:text-green-600 transition-colors p-3 md:p-0"
             >
               <HiOutlineHeart className="text-2xl" />
             </Link>
 
             <Link
               to="/profile"
-              className="block text-gray-700 hover:text-gray-900 transition-colors p-4 sm:p-0"
+              className="block text-gray-700 self-center hover:text-green-600 transition-colors p-3 md:p-0 "
             >
               <HiOutlineUser className="text-2xl" />
             </Link>
 
             <div
               onClick={toggleSidebar}
-              className="relative cursor-pointer text-gray-700 hover:text-gray-900 transition-colors p-4 sm:p-0"
+              className="relative cursor-pointer self-center text-gray-700 hover:text-green-600 transition-colors p-3 md:p-0"
             >
               <HiOutlineShoppingBag className="text-2xl" />
               {totalItems > 0 && (
@@ -110,7 +116,19 @@ export default function Header({ scrollToFooter }) {
                 </div>
               )}
             </div>
+            <Link
+              to={"/shop"}
+              className=" inline-block md:hidden self-center mb-3 px-5 py-[6px] mt-4 text-white text-md bg-gradient-to-r from-teal-400 to-green-600 rounded-3xl hover:from-teal-500 hover:to-green-700 transition-colors duration-200"
+            >
+              Shop
+            </Link>
           </nav>
+          <Link
+            to={"/shop"}
+            className=" hidden md:inline-block px-3 py-1 text-white text-xl bg-gradient-to-r from-teal-400 to-green-600 rounded-full hover:from-teal-500 hover:to-green-700 transition-colors duration-200"
+          >
+            Shop Now
+          </Link>
         </div>
       </header>
       <Sidebar isSidebarOpen={isSidebarOpen} closeSidebar={closeSidebar} />
