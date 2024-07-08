@@ -51,8 +51,8 @@ export default function Header({ scrollToFooter }) {
       >
         <div className="mx-auto py-4 flex w-full justify-between items-center px-4 sm:px-4">
           <div className="ml-4 flex items-center">
-            <GrTechnology className="text-4xl text-gray-700 hover:text-teal-600 transition-colors duration-200" />
-            <span className="ml-2 text-2xl font-bold text-gray-700 hover:text-teal-600  transition-colors duration-200">
+            <GrTechnology className="text-4xl text-gray-700 hover:text-black transition-colors duration-200" />
+            <span className="ml-2 text-2xl font-bold text-gray-700 hover:text-black transition-colors duration-200">
               kurdTech
             </span>
           </div>
@@ -60,7 +60,7 @@ export default function Header({ scrollToFooter }) {
           <div className="block md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-gray-700 hover:text-teal-400 transition-colors"
+              className="text-gray-700 hover:text-black transition-colors"
             >
               {isMenuOpen ? (
                 <HiOutlineX className="text-2xl" />
@@ -73,7 +73,7 @@ export default function Header({ scrollToFooter }) {
           <nav
             className={`${
               isMenuOpen ? "block" : "hidden"
-            } absolute top-16 right-0 bg-white shadow-md  p-6 md:p-0    md:flex md:items-center md:space-x-5   md:relative md:top-0 flex flex-col  text-center md:flex-row md:bg-transparent md:shadow-none`}
+            } absolute top-16 right-0 bg-white shadow-md  p-6 md:p-0 md:flex md:items-center md:space-x-5 md:relative md:top-0 flex flex-col text-center md:flex-row md:bg-transparent md:shadow-none`}
           >
             {navbar.map((val, key) => (
               <Link
@@ -85,7 +85,7 @@ export default function Header({ scrollToFooter }) {
                 }}
                 key={key}
                 to={val.path ? val.path : ""}
-                className="block text-gray-700 hover:text-teal-600 text-lg transition-colors  p-4 md:p-0"
+                className="block text-gray-700 hover:text-black text-lg transition-colors p-4 md:p-0"
               >
                 {val.nav}
               </Link>
@@ -93,21 +93,21 @@ export default function Header({ scrollToFooter }) {
 
             <Link
               to="/wishlist"
-              className="block text-gray-700  self-center  hover:text-green-600 transition-colors p-3 md:p-0"
+              className="block text-gray-700 self-center hover:text-black transition-colors p-3 md:p-0"
             >
               <HiOutlineHeart className="text-2xl" />
             </Link>
 
             <Link
               to="/profile"
-              className="block text-gray-700 self-center hover:text-green-600 transition-colors p-3 md:p-0 "
+              className="block text-gray-700 self-center hover:text-black transition-colors p-3 md:p-0"
             >
               <HiOutlineUser className="text-2xl" />
             </Link>
 
             <div
               onClick={toggleSidebar}
-              className="relative cursor-pointer self-center text-gray-700 hover:text-green-600 transition-colors p-3 md:p-0"
+              className="relative cursor-pointer self-center text-gray-700 hover:text-black transition-colors p-3 md:p-0"
             >
               <HiOutlineShoppingBag className="text-2xl" />
               {totalItems > 0 && (
@@ -118,14 +118,14 @@ export default function Header({ scrollToFooter }) {
             </div>
             <Link
               to={"/shop"}
-              className=" inline-block md:hidden self-center mb-3 px-5 py-[6px] mt-4 text-white text-md bg-gradient-to-r from-teal-400 to-green-600 rounded-3xl hover:from-teal-500 hover:to-green-700 transition-colors duration-200"
+              className="inline-block md:hidden self-center mb-3 px-5 py-[6px] mt-4 text-white text-md bg-gray-800  rounded-3xl hover:bg-gray-950 transition-colors duration-200"
             >
               Shop
             </Link>
           </nav>
           <Link
             to={"/shop"}
-            className=" hidden md:inline-block px-3 py-1 text-white text-xl bg-gradient-to-r from-teal-400 to-green-600 rounded-full hover:from-teal-500 hover:to-green-700 transition-colors duration-200"
+            className="hidden md:inline-block px-3 py-1 text-white text-xl  rounded-full bg-gray-800 hover:bg-gray-950 transition-colors duration-200"
           >
             Shop Now
           </Link>

@@ -14,7 +14,7 @@ export default function NotFoundPage() {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black to-black opacity-60 rounded-lg"></div>
         <div className="relative z-10">
-          <h1 className="text-9xl font-extrabold mb-4 animate-bounce text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-green-600">
+          <h1 className="text-9xl font-extrabold mb-4 animate-bounce text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-700">
             404
           </h1>
           <h2 className="text-4xl font-semibold mb-4">Page Not Found</h2>
@@ -23,7 +23,7 @@ export default function NotFoundPage() {
           </p>
           <Link
             to="/"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-teal-400 to-green-600 text-black font-bold rounded-full hover:from-teal-500 hover:to-green-700 transition-transform transform hover:scale-105"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-blue-400 to-blue-700 text-black font-bold rounded-full hover:from-blue-500 hover:to-blue-800 transition-transform transform hover:scale-105"
           >
             Go Back Home
           </Link>
