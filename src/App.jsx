@@ -17,7 +17,7 @@ function App() {
   };
 
   return (
-    <div className="">
+    <div className="bg-white">
       <Router>
         <Header scrollToFooter={scrollToFooter} />
         <Routes>

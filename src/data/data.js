@@ -25,12 +25,6 @@ export const banners = [
     banner: "../src/assets/banner/banner1.jpg",
   },
   {
-    banner: "../src/assets/banner/banner2.jpg",
-  },
-  {
-    banner: "../src/assets/banner/banner3.jpg",
-  },
-  {
     banner: "../src/assets/banner/banner4.jpg",
   },
   {

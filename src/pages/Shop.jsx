@@ -43,12 +43,12 @@ export default function Shop() {
   });
 
   return (
-    <div className="w-full mb-5">
+    <div className="w-full mb-5 bg-white">
       <PageHeading home="Home" pageName="Shop" />
       <div className="flex flex-col md:flex-row w-11/12 m-auto items-start mt-8">
         <div className="w-full">
           <button
-            className="fixed bottom-4 right-4 z-10 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded shadow"
+            className="fixed bottom-4 right-4 z-10 bg-gray-800 hover:bg-gray-950 text-white font-bold px-4 py-2 rounded-3xl  shadow-black shadow-md"
             onClick={() => setIsFilterModalOpen(true)}
           >
             Show Filter
@@ -56,7 +56,7 @@ export default function Shop() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredProducts.map((product, index) => (
               <div key={index} className="mt-8 group">
-                <div className="overflow-hidden relative rounded-xl shadow-lg">
+                <div className="overflow-hidden relative bg-[#F3EEEA] rounded-xl shadow-lg">
                   <img
                     src={product.img}
                     alt={product.title}

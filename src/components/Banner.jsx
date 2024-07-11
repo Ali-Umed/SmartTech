@@ -13,6 +13,10 @@ export default function Banner() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplaySpeed: 2500,
+    autoplay: true,
+    draggable: true,
+    touchMove: true,
     prevArrow: <IoIosArrowRoundBack size={30} />,
     nextArrow: <IoIosArrowRoundForward size={30} />,
   };

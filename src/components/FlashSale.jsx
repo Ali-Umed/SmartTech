@@ -23,7 +23,7 @@ export default function FlashSale() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((item, key) => (
             <div key={key} className="mt-8 group">
-              <div className="overflow-hidden relative rounded-3xl shadow-lg">
+              <div className="overflow-hidden bg-[#F3EEEA] relative rounded-3xl shadow-lg">
                 <div className="relative">
                   <img
                     src={item.img}

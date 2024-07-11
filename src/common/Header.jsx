@@ -46,7 +46,7 @@ export default function Header({ scrollToFooter }) {
     <>
       <header
         className={`sticky top-0 z-50 w-full shadow-lg ${
-          sticky ? "bg-white" : ""
+          sticky ? "bg-[#F3EEEA]" : ""
         }`}
       >
         <div className="mx-auto py-4 flex w-full justify-between items-center px-4 sm:px-4">
